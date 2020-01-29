@@ -3,10 +3,12 @@
 README.md
 Dockefile
 docker-compose.yml
-checkpoints/*
-images/*
-results/*
-cache/*
 __pycache__/**
 dnnlib/**
 test_nvcc
+checkpoints/**
+networks/**
+images/**
+results/**
+cache/**
+datasets/**
