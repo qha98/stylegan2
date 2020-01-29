@@ -1,0 +1,12 @@
+.env
+.git
+README.md
+Dockefile
+docker-compose.yml
+checkpoints/*
+images/*
+results/*
+cache/*
+__pycache__/**
+dnnlib/**
+test_nvcc

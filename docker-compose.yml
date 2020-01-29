@@ -1,0 +1,28 @@
+version: "2.4"
+services:
+  stylegan2:
+    image: ${DOCKER_IMAGE:-eu.gcr.io/stylegan-258409/stylegan2}:${DOCKER_IMAGE_VERSION:-latest}
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    user: ${LOCAL_USER:-1000:1000}
+    runtime: nvidia
+    volumes: 
+      - ".:/app/"
+    environment: 
+      GPU_COUNT: ${GPU_COUNT:-1}
+    # command: "python dataset_tool.py create_from_images ./datasets/action images/action/"
+    # command: "python train.py"
+    # command: "python runway_model.py"
+  code-server:
+    container_name: code-server
+    image: codercom/code-server
+    user: '1000:1000'
+    ports:
+      - "443:8080"
+    volumes:
+      - "./:/home/coder/project"
+      - "./cache/.local/share/code-server:/home/coder/.local/share/code-server"
+    environment:
+      PASSWORD: ${VSCODE_PASSWORD}
+    command: "--cert --disable-telemetry"

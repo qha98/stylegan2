@@ -1,0 +1,15 @@
+.env
+__pycache__/**
+dnnlib/**
+test_nvcc
+checkpoints/**
+networks/**
+images/**
+results/**
+cache/**
+datasets/**
+!checkpoints/.gitkeep 
+!images/.gitkeep 
+!results/.gitkeep 
+!cache/.gitkeep 
+!datasets/.gitkeep 
