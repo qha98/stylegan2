@@ -24,7 +24,6 @@ services:
     user: ${LOCAL_USER:-1000:1000}
     ports:
       - "443:8080"
-      - "9000:8888"
     volumes:
       - "./:/home/coder/project"
       - "./data/code-server:/home/coder/.local/share/code-server"
